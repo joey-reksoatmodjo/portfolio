@@ -1,0 +1,10 @@
+{% from "components.html" import card %}
+
+<section class="container" id="projects">
+  <div class="content">
+    <h1>PROJECTS</h1>
+      {% for cards in project_cards %}
+        {{ card( title=cards["title"], body=cards["body"], links=cards["links"] ) }}
+      {% endfor %}
+  </div>
+</section>

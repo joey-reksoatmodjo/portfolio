@@ -1,0 +1,40 @@
+{% from "components.html" import collapsible %}
+
+<section class="container" id="about-me">
+  <div class="content">
+    <h1>ABOUT ME</h1>
+    <p>
+      Hello! I'm Joseph, but I go by Joey. For the past 5 years, I’ve worked as a Software Developer and Analytics Engineer in the aerospace industry, building robust in-house systems that support thousands of users.
+    </p>
+    {% call collapsible("Read More", "Collapse") %}
+      <p>     
+        I started as an intern for the major aerospace company Northrop Grumman, where my quick learning led to a full-time offer. I soon partnered directly with program leadership to create in-house software tools. By modernizing the preexisting suite, it was soon adopted by the largest program at Redondo Beach.
+      </p>
+      <p>
+        My work at Northrop Grumman caught the eye of the Enterprise Software team at a newer aerospace company just down the street, Millennium Space Systems. After hearing about the opportunity to start on a clean slate with their systems, I knew I couldn't pass that up.
+      </p>
+      <p>      
+        Today, I develop custom applications and integrations used company-wide, while also serving as Product Owner for Manufacturing and Quality projects to ensure the satellite factory runs smoothly.
+      </p> 
+    {% endcall %}
+    <h1>SKILLS</h1>
+    <h2>CODE</h2>
+    <div class="svg-list">
+      {% for svg in svg_code_files %}
+      <div class="tooltip">
+        <img src="{{ svg.path }}" class="svg-med" alt="{{ svg.name }}" />
+        <span class="tooltiptext">{{ svg.name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <h2>TOOLS</h2>
+    <div class="svg-list">
+      {% for svg in svg_tool_files %}
+      <div class="tooltip">
+        <img src="{{ svg.path }}" class="svg-med" alt="{{ svg.name }}" />
+        <span class="tooltiptext">{{ svg.name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

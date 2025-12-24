@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Joey's Portfolio - Showcasing projects, experience, and contact information." />
+    <meta name="keywords" content="portfolio, Joey, projects, experience, contact, web developer" />
+    <title>Joey's Portfolio</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+  </head>
+  <body id="scl-grdnt-bg">
+
+    <!-- Side anchor navigation -->
+    <div class="side-nav">
+      <button class="side-nav-link" data-target="#outro" title="Contact"></button>
+      <button class="side-nav-link" data-target="#experience" title="Experience"></button>
+      <button class="side-nav-link" data-target="#projects" title="Projects"></button>
+      <button class="side-nav-link" data-target="#about-me" title="About Me"></button>
+      <button class="side-nav-link" data-target="#landing" title="Landing"></button>
+    </div>
+
+    <!-- Rocket animation assets -->
+    <div id="rckt">
+      <div class="fixed-rocket-stages">
+        <img src="static/gif/propulsion.gif" alt="propulsion" id="propulsion" class="" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/rocket-stage-1.svg" alt="rocket stage one" id="rckt-stg-one" class="" style="height: 60vh; opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/rocket-stage-2.svg" alt="rocket stage two" id="rckt-stg-two" class="" style="height: 60vh; opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/booster.svg" alt="rocket left booster" id="rckt-left-booster" class="" style="height: 21.2vh; transform: translate(-2.9vh, 19.4vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/booster.svg" alt="rocket right booster" id="rckt-right-booster" style="height: 21.2vh; transform: translate(2.9vh, 19.4vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/rocket-stage-3.svg" alt="rocket stage three" id="rckt-stg-three" style="height: 31vh; opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/main-booster.svg" alt="rocket stage three" id="rckt-main-booster" class="" style="height: 32vh; transform: translateY(44%); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/rocket-stage-4.svg" alt="rocket stage four" id="rckt-stage-4" class="" style="height: 14.55vh; transform: translateY(57%); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/solar-panel-right.svg" alt="solar panel right" id="solar-panel-right" class="panel panel-right" style="height: 4.4vh; transform: translate(3.6vh, -1.8vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/solar-panel-right.svg" alt="solar panel right" id="solar-panel-right-2" class="panel panel-right" style="height: 4.4vh; transform: translate(6.7vh, -1.8vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/solar-panel-right.svg" alt="solar panel right" id="solar-panel-right-3" class="panel panel-right" style="height: 4.4vh; transform: translate(9.8vh, -1.8vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/payload.svg" alt="payload" id="payload" class="" style="height: 6vh; transform: translate(0.15vh, -1.9vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/payload-cover-left.svg" alt="payload cover left" id="payload-cover-left" class="" style="height: 22.5vh; transform: translate(-1.5vh, -4.2vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/payload-cover-right.svg" alt="payload cover right" id="payload-cover-right" class="" style="height: 22.5vh; transform: translate(1.3vh, -4.2vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/solar-panel-left.svg" alt="solar panel left" id="solar-panel-left" class="panel panel-left" style="height: 4.4vh; transform: translate(-3.6vh, -1.8vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/solar-panel-left.svg" alt="solar panel left" id="solar-panel-left-2" class="panel panel-left" style="height: 4.4vh; transform: translate(-6.7vh, -1.8vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/solar-panel-left.svg" alt="solar panel left" id="solar-panel-left-3" class="panel panel-left" style="height: 4.4vh; transform: translate(-9.8vh, -1.8vh); opacity: 0; visibility: hidden;" />
+      </div>
+      <div class="fixed-rocket-stages">
+        <img src="static/svg/satellite.svg" alt="satellite" id="satellite" class="" style="height: 10vh; rotate: 70deg; opacity: 1; visibility: visible;" />
+      </div>
+    </div>
+
+    <!-- portfolio content -->
+    <div id="smooth-content">
+      <section class="portfolio-content">
+        <div class="svg-stars-bg" data-speed="0.5"></div>
+
+        <!-- Landing -->
+        <section class="container" id="landing">
+          <div class="content launchpad">
+            <h1 class="placard">
+              JOEY <br />
+              REKSOATMODJO
+            </h1>
+            <h2 class="custom-h2">MY PORTFOLIO</h2>
+            <h3 class="custom-h3">SOFTWARE DEVELOPER & DATA ENGINEER</h3>
+          </div>
+          <img src="static/svg/layer2-bushes.svg" alt="Foreground SVG" id="back-bushes" class="svg-bottom" />
+          <img src="static/svg/launch-pad.svg" alt="Foreground SVG" id="launchpad" class="svg-bottom" />
+          <img src="static/svg/tower.svg" alt="Foreground SVG" id="tower" class="svg-bottom" />
+          <img src="static/svg/tank.svg" alt="Foreground SVG" id="water-tank" class="svg-bottom" />
+          <img src="static/svg/rocket-on-pad.svg" alt="Foreground SVG" id="rocket-grounded" class="svg-bottom" />
+          <img src="static/svg/layer1-bushes.svg" alt="Foreground SVG" id="front-bushes" class="svg-bottom" />
+          <div id="ocean"></div>
+        </section>
+
+        <section class="container"></section>
+        <section class="container" id="rocket-entrance"></section>
+
+        <!-- About Me -->
+        <section class="container" id="about-me">
+          <div class="content">
+            <h1>ABOUT ME</h1>
+            <p>
+              Hello! I'm Joseph, but I go by Joey. For the past 5 years, I’ve worked as a Software Developer and Analytics Engineer in the aerospace industry, building robust in-house systems that support thousands of users.
+            </p>
+
+            <div class="collapsible-container">
+              <button class="collapsible-expand-btn">Read More</button>
+              <div class="collapsible-content" style="display: none;">
+                <p>
+                  I started as an intern for the major aerospace company Northrop Grumman, where my quick learning led to a full-time offer. I soon partnered directly with program leadership to create in-house software tools. By modernizing the preexisting suite, it was soon adopted by the largest program at Redondo Beach.
+                </p>
+                <p>
+                  My work at Northrop Grumman caught the eye of the Enterprise Software team at a newer aerospace company just down the street, Millennium Space Systems. After hearing about the opportunity to start on a clean slate with their systems, I knew I couldn't pass that up.
+                </p>
+                <p>
+                  Today, I develop custom applications and integrations used company-wide, while also serving as Product Owner for Manufacturing and Quality projects to ensure the satellite factory runs smoothly.
+                </p>
+                <button class="collapsible-collapse-btn">Collapse</button>
+              </div>
+            </div>
+
+            <h1>SKILLS</h1>
+            <h2>CODE</h2>
+            <div class="svg-list" id="skills-code"></div>
+            <h2>TOOLS</h2>
+            <div class="svg-list" id="skills-tools"></div>
+          </div>
+        </section>
+
+        <section class="container" id="rocket-stg-2"></section>
+
+        <!-- Projects -->
+        <section class="container" id="projects">
+          <div class="content">
+            <h1>PROJECTS</h1>
+            <!-- Cards inserted by JS -->
+          </div>
+        </section>
+
+        <section class="container" id="rocket-stg-3"></section>
+
+        <!-- Experience -->
+        <section class="container" id="experience">
+          <div class="content">
+            <h1>EXPERIENCE</h1>
+            <!-- Experience cards inserted by JS -->
+
+            <h1>ACHIEVEMENTS</h1>
+            <div class="flex-row" id="achievements"></div>
+          </div>
+        </section>
+
+        <section class="container" id="rocket-stg-4"></section>
+        <section class="container" id="rocket-stg-5"></section>
+
+        <!-- Outro -->
+        <section class="container" id="outro">
+          <div class="content">
+            <h1>Launch is a Success!</h1>
+            <p>
+              Thank you for taking the time to launch through my portfolio! If you would like to keep in touch, please check out my contacts below.
+            </p>
+            <div class="flex-row">
+              <div class="tooltip">
+                <img src="static/svg/linkedin-svgrepo-com.svg" class="svg-med" alt="LinkedIn" />
+                <span class="tooltiptext">LinkedIn</span>
+              </div>
+              <div class="tooltip">
+                <img src="static/svg/email-internet-media-svgrepo-com.svg" class="svg-med" alt="Email" />
+                <span class="tooltiptext">Email</span>
+              </div>
+              <div class="tooltip">
+                <img src="static/svg/curriculum-vitae-svgrepo-com.svg" class="svg-med" alt="Resume" />
+                <span class="tooltiptext">Resume</span>
+              </div>
+              <div class="tooltip">
+                <img src="static/svg/github-svgrepo-com.svg" class="svg-med" alt="Github" />
+                <span class="tooltiptext">Github</span>
+              </div>
+            </div>
+            <img src="static/svg/shooting-star.svg" alt="Foreground SVG" id="shooting-star" class="absolute" />
+          </div>
+        </section>
+      </section>
+    </div>
+
+  </body>
+  <script src="static/js/nav.js"></script>
+  <script src="static/js/landing-gsap.js"></script>
+  <script src="static/js/rocket-animate.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/render.js"></script>
+</html>

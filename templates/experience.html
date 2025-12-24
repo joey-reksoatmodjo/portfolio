@@ -1,0 +1,16 @@
+{% from "components.html" import card, cardVert %}
+
+<section class="container" id="experience">
+  <div class="content">
+    <h1>EXPERIENCE</h1>
+    {% for cards in experience_cards %}
+      {{ card( title=cards["title"], subtitle=cards["subtitle"], body=cards["body"], links=cards["links"] ) }}
+    {% endfor %}
+    <h1>ACHIEVEMENTS</h1>
+    <div class="flex-row">
+      {% for cards in achievement_cards %}
+        {{ cardVert( icon=cards["icon"], subtitle=cards["subtitle"], body=cards["body"] ) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

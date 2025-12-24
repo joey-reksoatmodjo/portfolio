@@ -1,0 +1,32 @@
+<section class="container" id="outro">
+  <div class="content">
+    <h1>Launch is a Success!</h1>
+    <p>
+      Thank you for taking the time to launch through my portfolio! If you would like to keep in touch, please check out my contacts below.
+    </p>
+    <div class="flex-row">
+      <div class="tooltip">
+        <img src="{{ url_for('static', filename='svg/linkedin-svgrepo-com.svg') }}" class="svg-med" alt="{{ LinkedIn }}" />
+        <span class="tooltiptext">LinkedIn</span>
+      </div>
+      <div class="tooltip">
+        <img src="{{ url_for('static', filename='svg/email-internet-media-svgrepo-com.svg') }}" class="svg-med" alt="{{ Email }}" />
+        <span class="tooltiptext">Email</span>
+      </div>
+      <div class="tooltip">
+        <img src="{{ url_for('static', filename='svg/curriculum-vitae-svgrepo-com.svg') }}" class="svg-med" alt="{{ Resume }}" />
+        <span class="tooltiptext">Resume</span>
+      </div>
+      <div class="tooltip">
+        <img src="{{ url_for('static', filename='svg/github-svgrepo-com.svg') }}" class="svg-med" alt="{{ Github }}" />
+        <span class="tooltiptext">Github</span>
+      </div>
+    </div>
+    <img
+      src="{{ url_for('static', filename='svg/shooting-star.svg') }}"
+      alt="Foreground SVG"
+      id="shooting-star"
+      class="absolute"
+    />
+  </div>
+</section>

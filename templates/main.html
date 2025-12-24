@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Joey's Portfolio - Showcasing projects, experience, and contact information." />
+    <meta name="keywords" content="portfolio, Joey, projects, experience, contact, web developer" />
+    <title>Joey's Portfolio</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    
+  </head>
+  <body id="scl-grdnt-bg">
+
+    <!-- Side anchor navigation -->
+    <div class="side-nav">
+      <button class="side-nav-link" data-target="#outro" title="Contact"></button>
+      <button class="side-nav-link" data-target="#experience" title="Experience"></button>
+      <button class="side-nav-link" data-target="#projects" title="Projects"></button>
+      <button class="side-nav-link" data-target="#about-me" title="About Me"></button>
+      <button class="side-nav-link" data-target="#landing" title="Landing"></button>
+    </div>
+
+    <!-- Rocket animation assets -->
+    {% include "rocket_layers.html" %}
+
+    <!-- portfolio content -->
+    <div id="smooth-content">
+      <section class="portfolio-content">
+        <div class="svg-stars-bg" data-speed="0.5"></div>
+        {% include "landing.html" %}
+        <section class="container"></section>
+        <section class="container" id="rocket-entrance"></section>
+        {% include "about_me.html" %}
+        <section class="container" id="rocket-stg-2"></section>
+        {% include "projects.html" %}
+        <section class="container" id="rocket-stg-3"></section>
+        {% include "experience.html" %}
+        <section class="container" id="rocket-stg-4"></section>
+        <section class="container" id="rocket-stg-5"></section>
+        {% include "outro.html" %}
+      </section>
+    </div>
+
+  </body>
+  <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/landing-gsap.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/rocket-animate.js') }}"></script>
+</html>

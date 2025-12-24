@@ -1,0 +1,46 @@
+{% macro card(title, body, subtitle=None, links=None) %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">{{ title }}</h3>
+    <div class="card-links">
+      {% if links %} 
+        {% for link in links %}
+        <a href="{{ link.url }}" class="card-link" target="_blank" rel="noopener">
+          <img src="{{ link.icon }}" alt="icon" class="card-icon" />
+        </a>
+        {% endfor %} 
+      {% endif %}
+    </div>
+  </div>
+  {% if subtitle %}
+  <h4 class="card-subtitle">{{ subtitle }}</h4>
+  {% endif %}
+  <p class="card-text">{{ body }}</p>
+</div>
+{% endmacro %}
+
+{% macro cardVert(body, icon=None, title=None, subtitle=None ) %}
+<div class="card-mid">
+  {% if title %}
+  <h3 class="card-title txt-mid">{{ title }}</h3>
+  {% endif %}
+  {% if icon %} 
+  <img src="{{ icon }}" alt="icon" class="card-icon-lg" />
+  {% endif %}
+  {% if subtitle %}
+  <h4 class="card-subtitle txt-mid">{{ subtitle }}</h4>
+  {% endif %}
+  <p class="card-text txt-mid">{{ body }}</p>
+</div>
+{% endmacro %}
+
+{# Macro for collapsible/expandible content #}
+{% macro collapsible(expand_text="Show More", collapse_text="Show Less") %}
+<div class="collapsible-container">
+  <button class="collapsible-expand-btn">{{ expand_text }}</button>
+  <div class="collapsible-content" style="display: none;">
+    {{ caller() }}
+    <button class="collapsible-collapse-btn">{{ collapse_text }}</button>
+  </div>
+</div>
+{% endmacro %}
