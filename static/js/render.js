@@ -1,5 +1,26 @@
 // Client-side rendering for static site
 (function () {
+  function populateRocket() {
+    const container = document.getElementById('rckt');
+    if (!container) return;
+    const assets = (window.siteData && window.siteData.rocket_assets) || [];
+    assets.forEach(asset => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'fixed-rocket-stages';
+      const img = document.createElement('img');
+      img.src = asset.src;
+      img.alt = asset.alt;
+      img.id = asset.id;
+      if (asset.classes) img.className = asset.classes;
+      if (asset.style) img.setAttribute('style', asset.style);
+      wrapper.appendChild(img);
+      container.appendChild(wrapper);
+    });
+  }
+
+  // Run immediately — GSAP scripts that follow need these elements in the DOM
+  populateRocket();
+
   function createElement(tag, attrs = {}, children = []) {
     const el = document.createElement(tag);
     Object.entries(attrs).forEach(([k, v]) => {
@@ -54,12 +75,11 @@
   }
 
   function populateExperience() {
-    const container = document.querySelector('#experience .content');
-    if (!container) return;
+    const insertPoint = document.getElementById('exp-cards-insert');
+    if (!insertPoint) return;
     const cards = (window.siteData && window.siteData.experience_cards) || [];
-    cards.forEach(c => container.insertBefore(createCard(c), container.querySelector('h1 + h1')));
+    cards.forEach(c => insertPoint.insertAdjacentElement('afterend', createCard(c)));
 
-    // achievements
     const achRoot = document.getElementById('achievements');
     const achievements = (window.siteData && window.siteData.achievement_cards) || [];
     achievements.forEach(a => achRoot.appendChild(createCardVert(a)));
@@ -90,31 +110,9 @@
     toolFiles.forEach(p => toolsRoot.appendChild(createTooltipSvg(p)));
   }
 
-  function setupCollapsible() {
-    document.querySelectorAll('.collapsible-expand-btn').forEach(btn => {
-      const wrapper = btn.closest('.collapsible-container');
-      const content = wrapper && wrapper.querySelector('.collapsible-content');
-      if (!content) return;
-      btn.addEventListener('click', () => {
-        content.style.display = '';
-        btn.style.display = 'none';
-      });
-    });
-    document.querySelectorAll('.collapsible-collapse-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const cont = btn.closest('.collapsible-content');
-        if (!cont) return;
-        cont.style.display = 'none';
-        const expandBtn = cont.parentElement.querySelector('.collapsible-expand-btn');
-        if (expandBtn) expandBtn.style.display = '';
-      });
-    });
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     populateProjects();
     populateExperience();
     populateSkills();
-    setupCollapsible();
   });
 })();

@@ -6,7 +6,7 @@
     <meta name="description" content="Joey's Portfolio - Showcasing projects, experience, and contact information." />
     <meta name="keywords" content="portfolio, Joey, projects, experience, contact, web developer" />
     <title>Joey's Portfolio</title>
-    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet" />
@@ -25,63 +25,8 @@
       <button class="side-nav-link" data-target="#landing" title="Landing"></button>
     </div>
 
-    <!-- Rocket animation assets -->
-    <div id="rckt">
-      <div class="fixed-rocket-stages">
-        <img src="static/gif/propulsion.gif" alt="propulsion" id="propulsion" class="" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/rocket-stage-1.svg" alt="rocket stage one" id="rckt-stg-one" class="" style="height: 60vh; opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/rocket-stage-2.svg" alt="rocket stage two" id="rckt-stg-two" class="" style="height: 60vh; opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/booster.svg" alt="rocket left booster" id="rckt-left-booster" class="" style="height: 21.2vh; transform: translate(-2.9vh, 19.4vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/booster.svg" alt="rocket right booster" id="rckt-right-booster" style="height: 21.2vh; transform: translate(2.9vh, 19.4vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/rocket-stage-3.svg" alt="rocket stage three" id="rckt-stg-three" style="height: 31vh; opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/main-booster.svg" alt="rocket stage three" id="rckt-main-booster" class="" style="height: 32vh; transform: translateY(44%); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/rocket-stage-4.svg" alt="rocket stage four" id="rckt-stage-4" class="" style="height: 14.55vh; transform: translateY(57%); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/solar-panel-right.svg" alt="solar panel right" id="solar-panel-right" class="panel panel-right" style="height: 4.4vh; transform: translate(3.6vh, -1.8vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/solar-panel-right.svg" alt="solar panel right" id="solar-panel-right-2" class="panel panel-right" style="height: 4.4vh; transform: translate(6.7vh, -1.8vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/solar-panel-right.svg" alt="solar panel right" id="solar-panel-right-3" class="panel panel-right" style="height: 4.4vh; transform: translate(9.8vh, -1.8vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/payload.svg" alt="payload" id="payload" class="" style="height: 6vh; transform: translate(0.15vh, -1.9vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/payload-cover-left.svg" alt="payload cover left" id="payload-cover-left" class="" style="height: 22.5vh; transform: translate(-1.5vh, -4.2vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/payload-cover-right.svg" alt="payload cover right" id="payload-cover-right" class="" style="height: 22.5vh; transform: translate(1.3vh, -4.2vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/solar-panel-left.svg" alt="solar panel left" id="solar-panel-left" class="panel panel-left" style="height: 4.4vh; transform: translate(-3.6vh, -1.8vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/solar-panel-left.svg" alt="solar panel left" id="solar-panel-left-2" class="panel panel-left" style="height: 4.4vh; transform: translate(-6.7vh, -1.8vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/solar-panel-left.svg" alt="solar panel left" id="solar-panel-left-3" class="panel panel-left" style="height: 4.4vh; transform: translate(-9.8vh, -1.8vh); opacity: 0; visibility: hidden;" />
-      </div>
-      <div class="fixed-rocket-stages">
-        <img src="static/svg/satellite.svg" alt="satellite" id="satellite" class="" style="height: 10vh; rotate: 70deg; opacity: 1; visibility: visible;" />
-      </div>
-    </div>
+    <!-- Rocket animation assets (populated by render.js from data.js) -->
+    <div id="rckt"></div>
 
     <!-- portfolio content -->
     <div id="smooth-content">
@@ -90,7 +35,7 @@
 
         <!-- Landing -->
         <section class="container" id="landing">
-          <div class="content launchpad">
+          <div class="content" id="landing-text">
             <h1 class="placard">
               JOEY <br />
               REKSOATMODJO
@@ -107,8 +52,9 @@
           <div id="ocean"></div>
         </section>
 
-        <section class="container"></section>
-        <section class="container" id="rocket-entrance"></section>
+        <!-- scroll spacers: used as GSAP ScrollTrigger markers for rocket animation -->
+        <div class="container"></div>
+        <div class="container" id="rocket-entrance"></div>
 
         <!-- About Me -->
         <section class="container" id="about-me">
@@ -142,7 +88,7 @@
           </div>
         </section>
 
-        <section class="container" id="rocket-stg-2"></section>
+        <div class="container" id="rocket-stg-2"></div>
 
         <!-- Projects -->
         <section class="container" id="projects">
@@ -152,12 +98,12 @@
           </div>
         </section>
 
-        <section class="container" id="rocket-stg-3"></section>
+        <div class="container" id="rocket-stg-3"></div>
 
         <!-- Experience -->
         <section class="container" id="experience">
           <div class="content">
-            <h1>EXPERIENCE</h1>
+            <h1 id="exp-cards-insert">EXPERIENCE</h1>
             <!-- Experience cards inserted by JS -->
 
             <h1>ACHIEVEMENTS</h1>
@@ -165,8 +111,8 @@
           </div>
         </section>
 
-        <section class="container" id="rocket-stg-4"></section>
-        <section class="container" id="rocket-stg-5"></section>
+        <div class="container" id="rocket-stg-4"></div>
+        <div class="container" id="rocket-stg-5"></div>
 
         <!-- Outro -->
         <section class="container" id="outro">
@@ -199,10 +145,10 @@
       </section>
     </div>
 
+    <script src="static/js/data.js"></script>
+    <script src="static/js/render.js"></script>
+    <script src="static/js/nav.js"></script>
+    <script src="static/js/landing-gsap.js"></script>
+    <script src="static/js/rocket-animate.js"></script>
   </body>
-  <script src="static/js/nav.js"></script>
-  <script src="static/js/landing-gsap.js"></script>
-  <script src="static/js/rocket-animate.js"></script>
-  <script src="static/js/data.js"></script>
-  <script src="static/js/render.js"></script>
 </html>

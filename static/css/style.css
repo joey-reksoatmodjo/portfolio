@@ -40,16 +40,13 @@ h3 {
 }
 
 h4 {
-font-family: 'Geologica';
-font-style: normal;
-font-weight: 400;
-font-size: 1.5vh;
-line-height: 1.5vh;
-/* identical to box height */
-/* letter-spacing: -0.06em; */
-text-transform: uppercase;
-
-color: #DADADA;
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vh;
+  line-height: 1.5vh;
+  text-transform: uppercase;
+  color: #DADADA;
 }
 
 p {
@@ -63,13 +60,6 @@ button {
   all: unset;
 }
 
-/* .geologica {
-  font-family: "Geologica", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 0;
-} */
 
 /* CLASS SELECTORS */
 
@@ -79,7 +69,7 @@ button {
   width: 100%;
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
+  overflow: clip;
   display: flex;
   justify-content: center;
 }
@@ -92,19 +82,18 @@ button {
     left: 50%;
     will-change: transform;
     transform: translateX(-50%);
-    background-image: url("svg/stars.svg");
+    background-image: url("../svg/stars.svg");
     background-repeat: repeat;
     background-position: top;
     background-size: auto 400vh;
 }
 
 .svg-bottom {
-  width: auto; /* Scale the SVG to the full width of the container */
-  /* height: 14vh; */
-  position: absolute; /* Position the SVG */
-  bottom: 0; /* Stick to the bottom of the container */
+  width: auto;
+  position: absolute;
+  bottom: 0;
   will-change: transform;
-  left: 50%; /* Center the SVG horizontally */
+  left: 50%;
 }
 
 .content {
@@ -249,8 +238,6 @@ button {
   padding: 0.8vh 1.6vh;
   border-radius: 6px;
   transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
   top: 110%;
@@ -267,7 +254,7 @@ button {
 .tooltip .tooltiptext::after {
   content: " ";
   position: absolute;
-  bottom: 100%; /* At the top of the tooltip */
+  bottom: 100%;
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
@@ -299,14 +286,25 @@ button {
   z-index: 999;
 }
 
+/* Rocket images start hidden; GSAP reveals them via autoAlpha on scroll */
+.fixed-rocket-stages img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#satellite {
+  opacity: 1;
+  visibility: visible;
+}
+
 .panel-left {
   transform-style: preserve-3d;
-  transform-origin: right center; /* Hinge on right */
+  transform-origin: right center;
 }
 
 .panel-right {
   transform-style: preserve-3d;
-  transform-origin: left center; /* Hinge on right */
+  transform-origin: left center;
 }
 
 .collapsible-content {
@@ -340,14 +338,9 @@ button {
 
 #rckt {
   position: fixed;
-  /* left: 20vh */
   left: 50%;
-  /* top: 50%; */
-  /* transform: translateX(-400%) translateY(-50%); */
   z-index: 999;
 }
-
-
 
 /* SIDE NAVIGATION STYLES */
 
@@ -364,7 +357,6 @@ button {
 }
 
 .side-nav-link {
-  /* padding: 0.5vh 0; */
   display: block;
   width: 3vh;
   height: 0.9vh;
@@ -405,4 +397,84 @@ button {
 .side-nav-link-active {
   background: #fffffff2;
   width: 4vh;
+}
+
+
+
+/* RESPONSIVE STYLES */
+
+@media (max-width: 682px) {
+  h1 {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+  h3 {
+    font-size: 3.5vw;
+    line-height: 3.5vw;
+  }
+  h4 {
+    font-size: 2.5vw;
+    line-height: 2vw;
+  }
+  p {
+    font-size: 3vw;
+    line-height: 4.5vw;
+  }
+  .content {
+    transform: translate(0%, 0%);
+    width: 80vw;
+    z-index: 4;
+  }
+  .card-icon-lg {
+	width: auto;
+	height: 0vh;
+  }
+
+  .placard {
+    font-size: 9vw;
+    line-height: 9vw;
+    margin-bottom: 4vw;
+  }
+
+  .custom-h2 {
+    font-size: 6vw;
+    line-height: 6vw;
+    margin-bottom: 1vw;
+  }
+
+  .custom-h3 {
+    font-size: 6vw;
+    line-height: 6vw;
+  }
+
+  #landing-text {
+    margin-bottom: 70vw;    
+  }
+
+  #rckt {
+    left: 100%;
+  }
+
+  .side-nav-link {
+    width: 2vh;
+    height: 4vh;
+  }
+
+  .side-nav-link-active {
+    width: 2.5vh;
+  }
+
+  .side-nav-link:hover::after {
+    opacity: 1;
+    visibility: hidden;
+  }
+
+  .svg-list {
+    gap: 2vw;
+  }
+
+  .svg-med {
+    height: 8vw;
+    width: auto;
+  }
 }

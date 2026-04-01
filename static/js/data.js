@@ -65,6 +65,27 @@ window.siteData = {
     }
   ],
 
+  rocket_assets: [
+    { id: 'propulsion',          src: 'static/gif/propulsion.gif',             alt: 'propulsion' },
+    { id: 'rckt-stg-one',        src: 'static/svg/rocket-stage-1.svg',         alt: 'rocket stage one',     style: 'height: 60vh;' },
+    { id: 'rckt-stg-two',        src: 'static/svg/rocket-stage-2.svg',         alt: 'rocket stage two',     style: 'height: 60vh;' },
+    { id: 'rckt-left-booster',   src: 'static/svg/booster.svg',                alt: 'rocket left booster',  style: 'height: 21.2vh; transform: translate(-2.9vh, 19.4vh);' },
+    { id: 'rckt-right-booster',  src: 'static/svg/booster.svg',                alt: 'rocket right booster', style: 'height: 21.2vh; transform: translate(2.9vh, 19.4vh);' },
+    { id: 'rckt-stg-three',      src: 'static/svg/rocket-stage-3.svg',         alt: 'rocket stage three',   style: 'height: 31vh;' },
+    { id: 'rckt-main-booster',   src: 'static/svg/main-booster.svg',           alt: 'main booster',         style: 'height: 32vh; transform: translateY(44%);' },
+    { id: 'rckt-stage-4',        src: 'static/svg/rocket-stage-4.svg',         alt: 'rocket stage four',    style: 'height: 14.55vh; transform: translateY(57%);' },
+    { id: 'solar-panel-right',   src: 'static/svg/solar-panel-right.svg',      alt: 'solar panel right',    style: 'height: 4.4vh; transform: translate(3.6vh, -1.8vh);',  classes: 'panel panel-right' },
+    { id: 'solar-panel-right-2', src: 'static/svg/solar-panel-right.svg',      alt: 'solar panel right',    style: 'height: 4.4vh; transform: translate(6.7vh, -1.8vh);',  classes: 'panel panel-right' },
+    { id: 'solar-panel-right-3', src: 'static/svg/solar-panel-right.svg',      alt: 'solar panel right',    style: 'height: 4.4vh; transform: translate(9.8vh, -1.8vh);',  classes: 'panel panel-right' },
+    { id: 'payload',             src: 'static/svg/payload.svg',                alt: 'payload',              style: 'height: 6vh; transform: translate(0.15vh, -1.9vh);' },
+    { id: 'payload-cover-left',  src: 'static/svg/payload-cover-left.svg',     alt: 'payload cover left',   style: 'height: 22.5vh; transform: translate(-1.5vh, -4.2vh);' },
+    { id: 'payload-cover-right', src: 'static/svg/payload-cover-right.svg',    alt: 'payload cover right',  style: 'height: 22.5vh; transform: translate(1.3vh, -4.2vh);' },
+    { id: 'solar-panel-left',    src: 'static/svg/solar-panel-left.svg',       alt: 'solar panel left',     style: 'height: 4.4vh; transform: translate(-3.6vh, -1.8vh);', classes: 'panel panel-left' },
+    { id: 'solar-panel-left-2',  src: 'static/svg/solar-panel-left.svg',       alt: 'solar panel left',     style: 'height: 4.4vh; transform: translate(-6.7vh, -1.8vh);', classes: 'panel panel-left' },
+    { id: 'solar-panel-left-3',  src: 'static/svg/solar-panel-left.svg',       alt: 'solar panel left',     style: 'height: 4.4vh; transform: translate(-9.8vh, -1.8vh);', classes: 'panel panel-left' },
+    { id: 'satellite',           src: 'static/svg/satellite.svg',              alt: 'satellite',            style: 'height: 10vh; rotate: 70deg;' },
+  ],
+
   // Manually enumerated SVG file names from static/svg/skills/
   svg_code_files: [
     "static/svg/skills/code/CSS.svg",

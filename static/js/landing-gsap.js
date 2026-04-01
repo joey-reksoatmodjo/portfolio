@@ -14,11 +14,11 @@ gsap.set("#launchpad", {
   x: "-50%"
 });
 
-gsap.set("#tower", {
-  height: "70vh",
-  zIndex: 5,
-  x: "-235%"
-});
+// gsap.set("#tower", {
+//   height: "70vh",
+//   zIndex: 5,
+//   x: "-235%"
+// });
 
 gsap.set("#water-tank", {
   height: "22vh",
@@ -26,16 +26,76 @@ gsap.set("#water-tank", {
   x: "80%"
 });
 
-gsap.set("#rocket-grounded", {
-  height: "70vh",
-  zIndex: 4,
-  x: "-305%"
-});
+// gsap.set("#rocket-grounded", {
+//   height: "70vh",
+//   zIndex: 4,
+//   x: "-305%"
+// });
 
 gsap.set("#front-bushes", {
   height: "14vh",
   zIndex: 6,
   x: "-50%"
+});
+
+
+// dynamic GSAP settings based on screen size (mobile vs desktop)
+const isMobile = window.matchMedia("(max-width: 682px)").matches;
+
+if (isMobile) {
+  // mobile layout
+  gsap.set("#rocket-grounded", {
+    height: "50vh",
+    zIndex: 4,
+    x: "-75%"
+  });
+  gsap.set("#tower", {
+    height: "50vh",
+    zIndex: 5,
+    x: "-110%"
+  });
+} else {
+  // desktop layout
+  gsap.set("#rocket-grounded", {
+    height: "70vh",
+    zIndex: 4,
+    x: "-305%"
+  });
+  gsap.set("#tower", {
+    height: "70vh",
+    zIndex: 5,
+    x: "-235%"
+  });
+}
+
+
+// optional: respond to resize
+window.matchMedia("(max-width: 682px)").addEventListener("change", (e) => {
+  if (e.matches) {
+    // mobile
+    gsap.set("#rocket-grounded", {
+    height: "50vh",
+    zIndex: 4,
+    x: "-75%"
+  });
+  gsap.set("#tower", {
+    height: "50vh",
+    zIndex: 5,
+    x: "-110%"
+  });
+  } else {
+    // desktop
+    gsap.set("#rocket-grounded", {
+    height: "70vh",
+    zIndex: 4,
+    x: "-305%"
+  });
+  gsap.set("#tower", {
+    height: "70vh",
+    zIndex: 5,
+    x: "-235%"
+  });
+  }
 });
 
 // Parallax effect on the launch images
